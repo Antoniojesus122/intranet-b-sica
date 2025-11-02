@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Centro Educativo - Jefatura</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="brand">
+				<div class="logo">CE</div>
+				<div class="brand-text">
+					<div class="school">Centro Educativo</div>
+					<div class="dept">Jefatura</div>
+				</div>
+			</div>
+			<nav aria-label="Principal">
+				<ul class="nav">
+					<li><a href="login.html" class="nav-cta">Intranet</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main">
+		<div class="container">
+			<section class="card">
+				<h2>Acceso a la Intranet</h2>
+				<p class="lead">Zona de acceso para el personal docente y la administración. Introduce tus credenciales en la página siguiente.</p>
+				<div class="actions">
+					<a href="login.html" class="btn btn-primary">Ir a Intranet</a>
+					<a href="welcome01.php" class="btn btn-secondary">Información</a>
+				</div>
+				<p class="note">Si tienes problemas para acceder, contacta con la jefatura o el servicio técnico.</p>
+			</section>
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<small>Centro Educativo — Jefatura · &copy; <span id="year"></span></small>
+		</div>
+	</footer>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editor Autorizado Form 02</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+    .menu-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .menu-btn:hover {
+        background-color: #0056b3;
+    }
+    .menu-btn.danger {
+        background-color: #dc3545;
+    }
+    .menu-btn.danger:hover {
+        background-color: #a71e2a;
+    }
+    .info-box {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 20px 0;
+    }
+</style>
+<script>
+var decidir = " menú se añadirá aquí próximamente como nueva opción para Usted.";
+var catalogo = 2;
+var cargoMenu = 1;
+var abono01 = 0;
+var mPlus = 0;
+var saldo = catalogo + abono01;
+
+function myCatalog(catalogo, mPlus) {
+    return catalogo - mPlus + decidir;
+}
+</script>
+</head>
+<body onload="document.getElementById('Riendo1').innerHTML = saldo; document.getElementById('Riendo2').innerHTML = cargoMenu;">
+
+    <p style="background-color:#ffe6f0; padding: 8px; border-radius: 4px;">
+        <i>Inicio de sesión: <span id="Riendo0"></span></i>
+    </p>
+
+    <script>
+        var session = new Date();
+        document.getElementById("Riendo0").innerHTML = session;
+    </script>
+
+    <h2>Menú de Gestión de Cursos</h2>
+
+    <!-- Nuevo menú con botones -->
+    <div>
+        <a href="conectar13.php" class="menu-btn">Listar Cursos de la Academia</a>
+        <a href="conectar14.php" class="menu-btn">Añadir Curso a la Academia</a>
+        <a href="borrar_curso.php" class="menu-btn">Borrar Curso de la Academia</a>
+        <a href="editar_curso.php" class="menu-btn">Editar algún Curso</a>
+        <a href="index.html" class="menu-btn danger">Salir</a>
+    </div>
+
+    <!-- Información adicional (opcional) -->
+    <div class="info-box">
+        <p>Menús disponibles ahora: <span id="Riendo1"></span> <i>menús para sólo consultar.</i></p>
+        <p>Puede emplear adicionalmente: <span id="Riendo2"></span> <i>menú para añadir un curso.</i></p>
+    </div>
+
+    <p>¿Desea añadir cursos nuevos?</p>
+    <button onclick="mPlus=cargoMenu;document.getElementById('resultado').innerHTML = myCatalog(catalogo, mPlus);" 
+            style="padding: 8px 16px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Sí. Añadir ahora.
+    </button>
+    <p id="resultado"></p>
+
+</body>
+</html>
