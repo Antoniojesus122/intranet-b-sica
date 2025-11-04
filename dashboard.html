@@ -10,8 +10,10 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
-        background-color: #f9f9f9;
+        background-color: #f0f8f0;
+        color: #2e4a2e;
     }
+
     .menu-btn {
         display: block;
         width: 100%;
@@ -20,27 +22,62 @@
         text-align: center;
         text-decoration: none;
         color: white;
-        background-color: #007bff;
+        background-color: #2e7d32;
         border: none;
         border-radius: 6px;
         font-size: 16px;
         cursor: pointer;
         transition: background-color 0.3s;
     }
+
     .menu-btn:hover {
-        background-color: #0056b3;
+        background-color: #1b5e20;
     }
+
     .menu-btn.danger {
-        background-color: #dc3545;
+        background-color: #c62828;
     }
+
     .menu-btn.danger:hover {
-        background-color: #a71e2a;
+        background-color: #b71c1c;
     }
+
     .info-box {
-        background-color: #e9ecef;
+        background-color: #e8f5e9;
         padding: 15px;
         border-radius: 6px;
         margin: 20px 0;
+        border-left: 4px solid #4caf50;
+    }
+
+    h2 {
+        color: #1b5e20;
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.2s;
+    }
+
+    button:hover {
+        background-color: #388e3c;
+    }
+
+    .session-info {
+        background-color: #e0f2e0;
+        padding: 8px;
+        border-radius: 4px;
+        border-left: 3px solid #66bb6a;
+        font-style: italic;
+        margin-bottom: 20px;
     }
 </style>
 <script>
@@ -58,9 +95,9 @@ function myCatalog(catalogo, mPlus) {
 </head>
 <body onload="document.getElementById('Riendo1').innerHTML = saldo; document.getElementById('Riendo2').innerHTML = cargoMenu;">
 
-    <p style="background-color:#ffe6f0; padding: 8px; border-radius: 4px;">
+    <div class="session-info">
         <i>Inicio de sesión: <span id="Riendo0"></span></i>
-    </p>
+    </div>
 
     <script>
         var session = new Date();
@@ -69,26 +106,20 @@ function myCatalog(catalogo, mPlus) {
 
     <h2>Menú de Gestión de Cursos</h2>
 
-    <!-- Nuevo menú con botones -->
+    <!-- Menú con botones -->
     <div>
-        <a href="conectar13.php" class="menu-btn">Listar Cursos de la Academia</a>
-        <a href="conectar14.php" class="menu-btn">Añadir Curso a la Academia</a>
-        <a href="borrar_curso.php" class="menu-btn">Borrar Curso de la Academia</a>
-        <a href="editar_curso.php" class="menu-btn">Editar algún Curso</a>
+        <a href="./funciones/listar_cursos.php" class="menu-btn">Listar Cursos de la Academia</a>
+        <a href="./funciones/añadir_curso.php" class="menu-btn">Añadir Curso a la Academia</a>
+        <a href="./funciones/borrar_curso.php" class="menu-btn">Borrar Curso de la Academia</a>
+        <a href="./funciones/editar_curso.php" class="menu-btn">Editar algún Curso</a>
         <a href="index.html" class="menu-btn danger">Salir</a>
     </div>
 
-    <!-- Información adicional (opcional) -->
+    <!-- Información adicional -->
     <div class="info-box">
         <p>Menús disponibles ahora: <span id="Riendo1"></span> <i>menús para sólo consultar.</i></p>
         <p>Puede emplear adicionalmente: <span id="Riendo2"></span> <i>menú para añadir un curso.</i></p>
     </div>
-
-    <p>¿Desea añadir cursos nuevos?</p>
-    <button onclick="mPlus=cargoMenu;document.getElementById('resultado').innerHTML = myCatalog(catalogo, mPlus);" 
-            style="padding: 8px 16px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">
-        Sí. Añadir ahora.
-    </button>
     <p id="resultado"></p>
 
 </body>
